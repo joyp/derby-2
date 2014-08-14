@@ -3,7 +3,7 @@ block content
   h2 The Gamblers
   #gamblers
     each gambler in gamblers
-      .gambler
+      .gambler(data-gambler-id=gambler._id.toString())
         .photo(style='background-image:url("#{gambler.photo}");')
         .name= gambler.name
         .cash $#{gambler.cash.toFixed(2)}
@@ -20,4 +20,7 @@ block content
                 .info
                   .name= asset.name
                   .value $#{asset.value.toFixed(2)}
+
+block scripts
+  script(src='/js/user/gambler.js')
 
