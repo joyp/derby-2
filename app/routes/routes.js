@@ -15,6 +15,8 @@ module.exports = function(app, express){
   app.get('/', home.index);
 
   app.get('/gamblers', gamblers.index);
+  app.get('/gamblers/:id', gamblers.show);
+  app.get('/gamblers/new', gamblers.addNew);
 
   console.log('Routes Loaded');
 };
